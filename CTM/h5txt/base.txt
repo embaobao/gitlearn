@@ -1,0 +1,126 @@
+	<!-- <meta http-equiv="Expires" contect="Mon,12 May 2018 00:20:00 GMT" />  -->
+   <!--设定网页的到期时间，一旦过期则必须到服务器上重新调用。
+
+   需要注意的是必须使用GMT时间格式，或直接设为0(不缓存)。-->
+   
+   
+   
+   // window.addEventListener('online',  updateOnlineStatus);
+   // window.addEventListener('offline', updateOnlineStatus);
+   // var OnlineStatus=false;
+   // window.onload=function ()
+   // {
+   // 
+   // 
+   //   window.addEventListener('online',  function(){
+   //    OnlineStatus=true;
+   //    alert("onLine");
+   //  });
+   //   window.addEventListener('offline', function(){
+   //     OnlineStatus=false
+   //     alert("offLine");
+   //   });
+   // 
+
+
+-------------------------
+	// 数组进出栈测试
+// 	var arrays = new Array("a", "b", "c");
+// 	b.printArryLog(arrays);
+	// arrays.shift();出栈
+	// b.printArryLog(arrays);
+	// arrays.unshift("a");
+	// b.printArryLog(arrays);进栈
+---------------------------
+ajax
+
+
+---------------------
+
+
+
+
+
+ // 获取getURL
+//  function getURL(url) {
+//   	// $("#msg").html("");
+//       var url = url;//请求的url
+//       var dateTime = disptime();
+//       var time2 = dateTime.DateTime; 
+//       // $("#msg1").html("发送时间：" + time2); 
+//       $.ajax({
+//       	type: 'get',
+//       	url: '\\'+url,
+//       	cache: false,
+//         dataType: "jsonp", //跨域采用jsonp方式 
+//         processData: false,
+//         timeout:10000, //超时时间，毫秒
+//         complete: function (data) {
+//         	var dateTime2 = disptime();
+//         	var time22 = dateTime2.DateTime;
+//         	var htmlTxt =[];
+//         	if (data.status==200) {
+//         		htmlTxt.push("成功<br/>");
+//         	} else {
+//         		htmlTxt.push("失败<br/>");
+//         	}        
+//         	htmlTxt.push("readyState=" + data.readyState + "<br/>status=" + data.status + "<br/>statusText=" + data.statusText + "<br/>响应时间：" + time22);
+//         	var htmlString = htmlTxt.join('');
+//           alert(htmlString);
+//         	// $("#msg").html(htmlString);
+//         }       
+//       });
+//     }
+// -------------------------------------------
+
+
+
+// 获取连接状态
+function get_status(){
+  var connection = navigator.connection||navigator.mozConnection||navigator.webkitConnection||{tyep:'unknown'};
+  var type_text = ['unknown','ethernet','wifi','2g','3g','4g','none'];
+
+  if(typeof(connection.type) == "number"){
+    connection.type_text = type_text[connection.type];
+  }else{
+    connection.type_text = connection.type;
+  }
+  if(typeof(connection.bandwidth) == "number"){
+    if(connection.bandwidth > 10){
+     connection.type = 'wifi';
+   }else if(connection.bandwidth > 2){
+     connection.type = '3g';
+   }else if(connection.bandwidth > 0){
+     connection.type = '2g';
+   }else if(connection.bandwidth == 0){
+     connection.type = 'none';
+   }else{
+     connection.type = 'unknown';
+   }
+ }
+
+var html = 'Type : '+connection.type_text;
+html += '\nBandwidth : '+connection.bandwidth;
+html += '\nisOnline : '+navigator.onLine;
+return html;
+}
+
+--------------------------------------------------
+// // 浏览器动态数据检测未联机执行函数
+// function conectError() {
+// 
+// 	//网络不可访问时加载
+// 	//
+// }
+// 
+// 
+// 
+// // 浏览器动态数据检测 联机执行函数
+// 
+// function conectSuccess() {
+// 	//
+// 	//网络可访问时加载
+// 	//document.write("<scr"+"ipt src=\"##.js\"></sc"+"ript>");
+// 	
+// }
+----------------------------------
